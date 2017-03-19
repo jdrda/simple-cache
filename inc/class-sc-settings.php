@@ -368,6 +368,24 @@ class SC_Settings {
 									</select>
 								</td>
 							</tr>
+
+                            <?php
+                            /**
+                             * Added Memcache server address by Jan Drda START
+                             */
+                            if ( class_exists( 'Memcache' ) ) { ?>
+                                <tr>
+                                    <th class="in-memory-cache <?php if ( ! empty( $config['enable_in_memory_object_caching'] ) ) : ?>show<?php endif; ?>" scope="row"><label for="sc_in_memory_cache"><?php _e( 'Memcached server', 'simple-cache' ); ?></label></th>
+                                    <td class="in-memory-cache <?php if ( ! empty( $config['enable_in_memory_object_caching'] ) ) : ?>show<?php endif; ?>">
+                                        <input type="text" name="sc_simple_cache[memcached_server]" id="memcached_server" value="127.0.0.1:11211">
+                                    </td>
+                                </tr>
+                            <?php }
+                            /**
+                             * Added Memcache server address by Jan Drda END
+                             */
+                            ?>
+
 						<?php else : ?>
 							<tr>
 								<td colspan="2">

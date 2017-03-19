@@ -413,6 +413,20 @@ class WP_Object_Cache {
 
 		global $memcached_servers;
 
+        /**
+         * Added Memcache server address by Jan Drda START
+         */
+
+        global $config;
+
+        if(isset($config['memcached_server'])){
+            $memcached_servers = array( trim($config['memcached_server']) );
+		}
+
+        /**
+         * Added Memcache server address by Jan Drda END
+         */
+
 		if ( isset( $memcached_servers ) ) {
 			$buckets = $memcached_servers;
 		} else {
