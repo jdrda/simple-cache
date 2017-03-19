@@ -46,6 +46,18 @@ class SC_Config {
 				'default'   => false,
 				'sanitizer' => array( $this, 'boolval' ),
 			),
+
+            /**
+             * Added Memcache server address by Jan Drda START
+             */
+            'memcached_servers' => array(
+                'default'   => '127.0.0.1:11211',
+                'sanitizer'   => 'sanitize_text_field',
+            ),
+            /**
+             * Added Memcache server address by Jan Drda END
+             */
+
 		);
 	}
 

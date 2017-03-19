@@ -377,7 +377,7 @@ class SC_Settings {
                                 <tr>
                                     <th class="in-memory-cache <?php if ( ! empty( $config['enable_in_memory_object_caching'] ) ) : ?>show<?php endif; ?>" scope="row"><label for="sc_in_memory_cache"><?php _e( 'Memcached server', 'simple-cache' ); ?></label></th>
                                     <td class="in-memory-cache <?php if ( ! empty( $config['enable_in_memory_object_caching'] ) ) : ?>show<?php endif; ?>">
-                                        <input type="text" name="sc_simple_cache[memcached_server]" id="memcached_server" value="<?php if(isset($config['memcached_server'])) { echo $config['memcached_server']; } else { echo '127.0.0.1:11211'; } ?>">
+                                        <input type="text" name="sc_simple_cache[memcached_server]" id="memcached_server" value="<?php if(!empty($config['memcached_server'])) { echo $config['memcached_server']; } else { echo '127.0.0.1:11211'; } ?>">
                                     </td>
                                 </tr>
                             <?php }
